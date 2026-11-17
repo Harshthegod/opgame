@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riftbound: Infinite Frontier</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="gameCanvas"></canvas>
+
+      <div id="hud">
+        <div class="topbar">
+          <div class="chip" id="modeName">Solo</div>
+          <div class="chip" id="zoneStatus">Safe zone 1100m</div>
+          <div class="chip" id="waveStatus">Wave 1</div>
+          <div class="chip" id="timerStatus">03:00</div>
+        </div>
+
+        <div id="resourceStats" class="resourceStats"></div>
+        <div id="buildPanel" class="buildPanel"></div>
+      </div>
+
+      <div id="startMenu" class="panel">
+        <div class="title-wrap">
+          <p class="eyebrow">PROJECT CODENAME: OPERATION INFINITE</p>
+          <h1>RIFTBOUND</h1>
+          <h2>INFINITE FRONTIER</h2>
+        </div>
+
+        <p class="subtitle">
+          Explore the Infinite Isle, survive the shrinking zone, gather material,
+          build defenses, and choose between a local battle practice and endless
+          rift survival. Practice opponents are offline bots; online play is not available.
+        </p>
+
+        <div class="menu-group">
+          <span class="label">Local game mode</span>
+          <div class="selector" id="modeSelector">
+            <button class="mode-btn active" data-mode="solo">Solo</button>
+            <button class="mode-btn" data-mode="duos">Duos</button>
+            <button class="mode-btn" data-mode="squads">Squads</button>
+            <button class="mode-btn" data-mode="custom">Custom</button>
+            <button class="mode-btn" data-mode="survival">Rift Survival</button>
+          </div>
+        </div>
+
+        <div class="menu-group">
+          <span class="label">Graphics Preset</span>
+          <div class="selector" id="presetSelector">
+            <button class="preset-btn" data-preset="LOW">Low</button>
+            <button class="preset-btn" data-preset="MEDIUM">Medium</button>
+            <button class="preset-btn active" data-preset="HIGH">High</button>
+            <button class="preset-btn" data-preset="ULTRA">Ultra</button>
+          </div>
+        </div>
+
+        <p class="controls-hint">
+          <strong>WASD</strong> move · <strong>Mouse</strong> aim / fire ·
+          <strong>Shift</strong> sprint · <strong>Space</strong> dash ·
+          <strong>E</strong> collect · <strong>B</strong> build ·
+          <strong>1–4</strong> select build
+        </p>
+        <button id="playBtn" class="primary-btn">Deploy to The Infinite Isle</button>
+      </div>
+
+      <div id="endScreen" class="panel hidden">
+        <h3 id="endTitle">Victory</h3>
+        <p id="endSummary">You controlled the island.</p>
+        <button id="restartBtn" class="primary-btn">Launch Again</button>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
